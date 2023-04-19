@@ -38,15 +38,41 @@ If the output is 1, then the led glows.
 Program:
 /*
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Rathish kumar C
+RegisterNumber: 212222100043
 */
+### HALF ADDER
+```
+module half_adder(a, b, s, c);
+input a, b;
+output s, c;
+xor(s, a, b);
+and(c, a, b);
+endmodule
+```
+### FULL ADDER
+```
+module full_adder(a,b, ci, s, co);
+input a,b, ci;
+output s, co;
+wire x,y,z;
+xor (x,a,b);
+xor (s,x,ci);
+and (y,x,ci);
+and (z,a,b);
+or (co,y,z);
+endmodule
 Logic symbol & Truthtable
 RTL realization
+```
 
 ### Output:
 ### RTL
+### HALF ADDER:
+![PIC1](https://user-images.githubusercontent.com/120539823/230784091-71ed6877-44da-4162-9870-fb70fc1a8323.png)
 ### TIMING DIAGRAM
+### FULL ADDER:
+![TR2](https://user-images.githubusercontent.com/120539823/230783871-dd537e09-c342-4cd6-86f6-79f91cd300db.png)
 
 
 ### TRUTH TABLE 
