@@ -70,11 +70,27 @@ RTL realization
 ### RTL
 ### HALF ADDER:
 ![PIC1](https://user-images.githubusercontent.com/120539823/230784091-71ed6877-44da-4162-9870-fb70fc1a8323.png)
-### TIMING DIAGRAM
+
 ### FULL ADDER:
-![TR2](https://user-images.githubusercontent.com/120539823/230783871-dd537e09-c342-4cd6-86f6-79f91cd300db.png)
+![PIC2](https://user-images.githubusercontent.com/120539823/230784105-fec61967-bb0d-400e-a19d-d45f02566223.png)
+
+### TIMING DIAGRAM
+
+### HALF ADDER:
+![TTT](https://user-images.githubusercontent.com/120539823/230783707-e32984e6-292d-4c53-8ec7-3d0afd0bfee1.png)
+### FULL ADDER:
+![TT2](https://user-images.githubusercontent.com/120539823/230783721-70d67379-20ed-4d6e-9dd8-5d06fb75f93e.png)
 
 
 ### TRUTH TABLE 
 
+### HALF ADDER:
+![TR 1](https://user-images.githubusercontent.com/120539823/230783868-099e584f-539e-427e-9cc7-6d6fe8f5a93c.png)
+
+### FULL ADDER:
+![TR2](https://user-images.githubusercontent.com/120539823/230783871-dd537e09-c342-4cd6-86f6-79f91cd300db.png)
+
 ### Result:
+
+Thus implementation of half adder and full adder circuit are verified
+
