@@ -1,96 +1,94 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
-
-# Implementation-of-Half-Adder-and-Full-Adder-circuit
-### AIM:
-To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
-
-### Equipments Required:
-Hardware – PCs, Cyclone II , USB flasher
-Software – Quartus prime
-Theory
-Adders are digital circuits that carry out addition of numbers.
-
-### Half Adder
-Half adder is a combinational circuit that performs simple addition of two binary numbers. The input variables designate the augend and addend bits; the output variables produce the sum and carry. It is necessary to specify two output variables because the result may consist of two binary digits.
-
-Sum = A’B+AB’ =A ⊕ B Carry = AB
-
-### Full Adder
-Full adder is a digital circuit used to calculate the sum of three binary bits. It consists of three inputs and two outputs. Two of the input variables, denoted by A and B, represent the two significant bits to be added. The third input, Cin, represents the carry from the previous lower significant position. Two outputs are necessary because the arithmetic sum of three binary digits ranges in value from 0 to 3, and binary 2 or 3 needs two digits. The two outputs are sum and carry.
-
-Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = AB + ACin + BCin
-
- ![image](https://user-images.githubusercontent.com/36288975/163552156-a13e5a56-c638-4110-97d9-8896907c8d25.png)
-
-#### Figure -01 HALF ADDER 
+# Experiment--02-Implementation-of-combinational-logic
+Implementation of combinational logic gates
+ 
+## AIM:
+To implement the given logic function verify its operation in Quartus using Verilog programming.
+ F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
+F2=xy’z+x’y’z+w’xy+wx’y+wxy
+ 
+ 
+ 
+## Equipments Required:
+  Hardware – PCs, Cyclone II , USB flasher Software – Quartus prime
 
 
-![image](https://user-images.githubusercontent.com/36288975/163552057-b3547877-6d07-45b4-b7e0-bcfebfad9e1d.png)
+## Theory
+Logic gates are electronic circuits which perform logical functions on one or more inputs to produce one output.
 
-#### Figure -02 FULL ADDER 
+F=((C'.B.A)'(D'.C.A)'(C.B'.A)')'
 
-### Procedure
+1.AND gate The AND gate is an electronic circuit that gives a high output (1) only if all its inputs are high. A dot (.) is used to show the AND operation i.e. A.B or can be written as AB Y= A.B
 
-Connect the supply (+5V) to the circuit
-Switch ON the main switch
-If the output is 1, then the led glows.
-### 
-Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: Rathish kumar C
-RegisterNumber: 212222100043
-*/
-### HALF ADDER
+2.OR gate The OR gate is an electronic circuit that gives a high output (1) if one or more of its inputs are high. A plus (+) is used to show the OR operation. Y= A+B
+ 
+
+## Logic Diagram
+## Procedure
+
+1.Use module projname(input,output) to start the Verilog programmming.
+
+2.Assign inputs and outputs using the word input and output respectively. 
+
+3.Use defined keywords like wire,assign and required logic gates to represent the boolean expression. 
+
+4.Use each output to represent one for F1 and the other for F2. 5.End the verilog program using keyword endmodule.
+
+## Program:
 ```
-module half_adder(a, b, s, c);
-input a, b;
-output s, c;
-xor(s, a, b);
-and(c, a, b);
+Program to implement the given logic function and to verify its operations in quartus using Verilog programming.
+Developed by: RATHISH KUMAR C
+Register No:212222100043
+
+F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
+
+module imp(A,B,C,D,F1);
+input A,B,C,D;
+output F1;
+wire p,q,r,s,t;
+assign p = (~A & ~B & ~C & ~D);
+assign q = (A & ~C & ~D);
+assign r = (~B & C & ~D);
+assign s = (~A & B & C & D);
+assign t = (B & ~C & D);
+assign F1 = p | q | r | s | t;
+endmodule
+
+F2=xy’z+x’y’z+w’xy+wx’y+wxy
+
+module imp(w,x,y,z,F2);
+input w,x,y,z;
+output F2;
+wire p,q,r,s,t;
+assign p= (x & ~y & z);
+assign q= (~x & ~y & z);
+assign r= (~w & x & y);
+assign s= (w & ~x & y);
+assign t= (w & x & y);
+assign F2= p | q | r | s | t;
 endmodule
 ```
-### FULL ADDER
-```
-module full_adder(a,b, ci, s, co);
-input a,b, ci;
-output s, co;
-wire x,y,z;
-xor (x,a,b);
-xor (s,x,ci);
-and (y,x,ci);
-and (z,a,b);
-or (co,y,z);
-endmodule
-Logic symbol & Truthtable
-RTL realization
-```
+## RTL realization
+## Output:
+## Logical Diagram:
+![logic](https://github.com/pradeepsiva20/Experiment--02-Implementation-of-combinational-logic-/assets/120539823/7910c1b5-59f8-475d-8bd9-c6f9b9dc602b)
 
-### Output:
-### RTL
-### HALF ADDER:
-![PIC1](https://user-images.githubusercontent.com/120539823/230784091-71ed6877-44da-4162-9870-fb70fc1a8323.png)
+## RTL
+  For F1:
+  
+![237874285-33bf1982-c9f4-4e82-a293-ac0348beb82a](https://github.com/pradeepsiva20/Experiment--02-Implementation-of-combinational-logic-/assets/120539823/023d8b44-a950-4ad1-9922-67b636c91a47)
 
-### FULL ADDER:
-![PIC2](https://user-images.githubusercontent.com/120539823/230784105-fec61967-bb0d-400e-a19d-d45f02566223.png)
+  For F2:
+  
+![for f2](https://github.com/pradeepsiva20/Experiment--02-Implementation-of-combinational-logic-/assets/120539823/a91f10ff-fbc9-4a25-836f-935925f71369)
 
-### TIMING DIAGRAM
+## Timing Diagram
+  For F1:
+  
+![timing diagram for f1](https://github.com/pradeepsiva20/Experiment--02-Implementation-of-combinational-logic-/assets/120539823/7142e9d1-a309-46c5-95bd-ab9c27a929ad)
 
-### HALF ADDER:
-![TTT](https://user-images.githubusercontent.com/120539823/230783707-e32984e6-292d-4c53-8ec7-3d0afd0bfee1.png)
-### FULL ADDER:
-![TT2](https://user-images.githubusercontent.com/120539823/230783721-70d67379-20ed-4d6e-9dd8-5d06fb75f93e.png)
+  For F2:
+  
+![timing diagram for f2](https://github.com/pradeepsiva20/Experiment--02-Implementation-of-combinational-logic-/assets/120539823/297ca42b-86fe-4317-9241-2089dc3d25a6)
 
-
-### TRUTH TABLE 
-
-### HALF ADDER:
-![TR 1](https://user-images.githubusercontent.com/120539823/230783868-099e584f-539e-427e-9cc7-6d6fe8f5a93c.png)
-
-### FULL ADDER:
-![TR2](https://user-images.githubusercontent.com/120539823/230783871-dd537e09-c342-4cd6-86f6-79f91cd300db.png)
-
-### Result:
-
-Thus implementation of half adder and full adder circuit are verified
-
+## Result:
+Thus the given logic functions are implemented using  and their operations are verified using Verilog programming.
